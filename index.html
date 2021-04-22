@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<table style="border: 1px solid black">
+    <tr>
+        <th colspan="2">
+            Status Switch:
+        </th>
+        <td>
+            <img id="imgStatusswitch" src="image/off.png" alt="">
+        </td>
+    </tr>
+    <tr>
+        <th colspan="2">
+            Status connection:
+        </th>
+        <th id="statusConnection">false
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="connecToLamp()">Kết nối với bóng đèn</button>
+        </td>
+        <td>
+            <button onclick="Switchbutton()">Công Tắc</button>
+        </td>
+        <td>
+            <img id="myImage" onclick="Switchbutton()" src="image/pic_bulboff.gif" width="100" height="180">
+        </td>
+    </tr>
+</table>
+
+<script src="SwitchButton.js"></script>
+<script src="ElectricLamp.js"></script>
+
+<script>
+    let switchbutton = new SwitchButton();
+    let electriclamp = new ElectricLamp();
+
+    function connecToLamp() {
+        switchbutton.connecToLamp()
+    }
+
+    function Switchbutton() {
+        if (switchbutton.status === true) {
+            switchbutton.switchOff()
+        } else {
+            switchbutton.switchOn()
+        }
+    }
+
+
+</script>
+</body>
+</html>
